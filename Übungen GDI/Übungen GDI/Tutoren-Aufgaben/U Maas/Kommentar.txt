@@ -1,0 +1,11 @@
+Die Aufgabe kommt mir irgendwie bekannt vor: woher??
+
+Es gibt kleine Unschönheiten:
+- char-Cast benutzt
+- ein zweistelliges Array als Funktionsergebnis der Aufgabe 3: da sollte nur das erste Array-Element zurückgeliefert werden
+
+Die Aufgabe ist aber recht nett,
+die Teilaufgaben sind unterschiedlich schwer, 
+die erste ist Aufgabe ist gut für die Aufgaben 2 und 3 benutzbar,
+die Idee für die Testatfrage ist gut und
+sie sind gut erklärt.

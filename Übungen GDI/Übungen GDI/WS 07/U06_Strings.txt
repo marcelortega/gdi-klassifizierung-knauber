@@ -1,0 +1,70 @@
+package uebung06;
+
+/**
+ * Die Klasse implementiert Strings nach dem Muster der
+ * Programmiersprache C, in der Strings als char[] dargestellt
+ * und durch ein 0-Byte abgeschlossen werden.
+ */
+public interface Strings {
+
+	/**
+	 * Die Methode liefert die Anzahl der Zeichen im
+	 * char-Array, die vor dem ersten enthaltenen
+	 * 0-Byte steht.
+	 * @param string	Der nach dem Muster von C-Strings
+	 * aufgebaute String
+	 * @result	Die Anzahl der Zeichen vor dem ersten 0-Byte
+	 */
+	int strlen( char[] string );
+
+	/**
+	 * Die Methode fügt die Zeichen des 2. Parameters an das 
+	 * Ende des 1. Parameters an und liefert eine Referenz 
+	 * darauf als Ergebnis. Alle Parameter sind nach dem
+	 * Muster von C-Strings aufgebaut und durch ein 0-Byte
+	 * abgeschlossen.
+	 * @param dest	Enthält den ersten String, an dessen
+	 * Ende (ab dem 0-Byte) der zweite angefügt wird;
+	 * der Parameter muss eine Variable sein, da er verändert
+	 * wird
+	 * @param source	Enthält den zweiten String
+	 * @return	Eine Referenz auf den ersten Parameter
+	 */
+	char[] strcat( char[] dest, char[] source );
+
+	/**
+	 * Die Methode vergleicht den Inhalt der beiden Argumente 
+	 * bis zum darin enthaltenen 0-Byte und liefert genau dann 
+	 * true als Ergebnis, wenn die nach dem Muster von C
+	 * aufgebauten Strings gleich sind.
+	 * @param s1	Der erste String für den Vergleich
+	 * @param s2	Der zweite String für den Vergleich
+	 * @return	true genau dann, wenn die Inhalte der
+	 * Parameter gleich sind, sonst false
+	 */
+	boolean strcmp( char[] s1, char[] s2 );
+
+	/**
+	 * Die Methode vergleicht den Inhalt der beiden Argumente 
+	 * bis zum darin enthaltenen 0-Byte und liefert genau dann 
+	 * true als Ergebnis, wenn die nach dem Muster von C
+	 * aufgebauten Strings gleich sind, wobei Groß- und
+	 * Kleinschreibung nicht unterschieden wird.
+	 * @param s1	Der erste String für den Vergleich
+	 * @param s2	Der zweite String für den Vergleich
+	 * @return	true genau dann, wenn die Inhalte der
+	 * Parameter gleich sind, sonst false
+	 */
+	boolean stricmp( char[] s1, char[] s2 );
+
+	/**
+	 * Die Methode druckt den nach dem Muster von C-Strings
+	 * aufgebauten übergebenen Parameter auf den Bildschirm 
+	 * und liefert die Anzahl ausgegebener Zeichen als Ergebnis.
+	 * @param string	Der String, dessen Inhalt bis zum 0-Byte
+	 * ausgegeben wird
+	 * @return	Die Anzahl der Zeichen, die ausgegeben wurde
+	 */
+	int printf( char[] string );
+
+}

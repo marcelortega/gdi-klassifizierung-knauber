@@ -1,0 +1,20 @@
+A1 ist so nicht brauchbar, weil eine "globale Variable" verwendet wird. Man könnte es umschreiben, so dass entweder
+- ein zustandsbehaftetes Objekt verwendet wird oder
+- die zweite Methode wegfällt.
+
+A1: nette Aufgabe mit doubles
+- Beschreibung muss genauer/einfacher sein
+- in der Lösung: warum zwei Schleifenvariablen, die parallel laufen?
+
+A3: Anzahl uncommented lines of code zählen
+- gute Idee, auch mit der Einschränkung, dass in einer Zeile entweder Code oder ein Kommentar stehen darf
+- umschreiben für nicht-statische Methoden, so dass die Klasse zustandsbehaftet sein darf
+
+A4: Ausgang aus Labyrinth finden
+- eine Lösung mit statischen Methoden und "globalen Variablen" ist nicht angemessen
+- die Positionsangabe als Array der Länge 2 (Zeile, Spalte) ist nicht gut
+- der clone-Aufruf ist nicht gut: erst später in ADS/TPE besprochen
+- den Algorithmus zum Finden des Ausgangs habe ich **mit den vorhandenen Kommentaren** nicht verstanden: Tipp geben!
+-> in oo Lösung mit Klassen Labyrinth, Position und Start? umbauen; im Labyrinth wird geändert (Weg und Position eingezeichnet), daher sollte das Start-Labyrinth als Parameter an den Labyrinth-Konstruktor übergeben werden
+
+

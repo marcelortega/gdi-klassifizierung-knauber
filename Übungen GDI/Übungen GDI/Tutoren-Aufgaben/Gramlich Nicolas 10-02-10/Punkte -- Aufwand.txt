@@ -1,0 +1,13 @@
+anbei die "Muster"lösung (leider habe ich Generics genutzt, eine Lösung mit Arrays ist natürlich aber auch möglich)
+... SVG.jar ist ausführbar ("java -jar ...")
+... SVG_src.jar beinhaltet den Quellcode.
+
+Die textuelle Musterlösung schicke ich Ihnen morgen Nachmittag, nach der AGI-Klausur.
+
+Bezüglich der Aufwände würde ich sagen, dass das Blatt gegen Ende des Semesters innerhalb einer Woche gelöst werden kann.
+Bezüglich Punktevergabe würde ich bei 100 zu vergebenen Punkten vorschlagen:
+A1.) 10 
+A2.) 10
+A3.) 50
+A4.) 20
+A5.) 10

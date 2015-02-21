@@ -1,0 +1,17 @@
+public interface Date {
+	
+	int getDay();
+	int getMonth();
+	int getYear();
+	
+	boolean isValid();
+	
+	boolean earlierThan( Date d2 );
+	boolean equals( Date d2 );
+	boolean laterThan( Date d2 );
+	
+	Weekday getWeekday();
+	
+	int subtract( Date d2 );
+	
+}

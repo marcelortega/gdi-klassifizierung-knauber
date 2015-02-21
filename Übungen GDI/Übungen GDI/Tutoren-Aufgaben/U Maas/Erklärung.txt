@@ -1,0 +1,6 @@
+hier ist der Entwurf meiner Übungsaufgabe für GDI. Sie ist in ein Eclipse-Projekt gepackt.
+In der Klasse "HerrDerStrings" sind alle 3(4) Aufgaben mit Implementierung, Aufgabenstellung, Lernziele und Restriktionen enthalten. Außerdem gibt es noch eine Testklasse mit ausführlichen Tests für die Aufgaben.
+
+Die Übungsaufgabe wurde übrigens testdriven entwickelt :).
+Zuerst habe ich die Tests geschrieben, dann die Implementierung und zuletzt die Beschreibung.
+Dadurch viel es mir wesentlich leichter die Aufgaben zu entwickeln.

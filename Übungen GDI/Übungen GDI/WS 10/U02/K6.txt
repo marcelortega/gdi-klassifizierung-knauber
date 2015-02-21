@@ -1,0 +1,10 @@
+
+
+public class RunGame {
+	
+	public static void main(String[] args) {
+		HangManGame game = new HangManImpl("hangman.txt");
+		new HangManMainWindow(game);
+	}
+	
+}

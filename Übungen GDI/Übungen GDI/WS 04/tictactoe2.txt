@@ -1,0 +1,136 @@
+class Evaluator {
+  /* Aufgabe der Klasse Evaluator ist es, festzustellen, ob ein Spiel
+   * (wahlweise Tic-Tac-Toe oder 4-Gewinnt) gewonnen ist (Methode succeeded)
+   * oder unentschieden ausgegangen ist (Methode undecided)
+   */
+
+  // nrInRow gibt an, wie viele gleiche Steine in einer Reihe (horizontal,
+  // vertikal oder diagonal) notwendig sind, um ein Spiel zu gewinnen
+  private int nrInRow;
+
+  // dimension gibt an, wie viele Felder das Spielfeld in x- und y-Richtung
+  // umfasst; beide Dimensionen sind gleichlang
+  private int dimension;
+
+  Evaluator( int dimension, int nrInRow ) {
+    // hier wird die Evaluator-Klasse vom Startprogramm initialisiert
+    this.nrInRow   = nrInRow-1;
+    this.dimension = dimension;
+  }
+
+  boolean succeeded ( Figure [][] fig, int current ) {
+    /* Parameter:
+     * Figure bekommt das (zweidimensionale) Spielfeld übergeben;
+     * current ist der aktuelle Spieler, bzw. dessen Integer-Wert
+     * Ergebnis:
+     * true genau dann, wenn eine horizontale, vertikale oder diagonale
+     * Reihe von mindestens nrInRow gleichen Steinen vorliegt, sonst false
+     *
+     * Idee für die vier nachfolgenden Tests:
+     * Nur derjenige Spieler, der gerade am Zug ist (current), kann
+     * mit diesem Zug gewonnen haben (ansonsten wäre der Sieg schon
+     * nach dem vorherigen Zug festgestellt worden; dann natürlich
+     * zugunsten des anderen Spielers. Aus diesem Grund werden die
+     * Steine auf dem Feld (nur) mit current verglichen.
+     * Vorgehensweise:
+     * Die Variable win zeigt an, ob ein Spiel gewonnen wurde; falls ja,
+     * sind keine weiteren Tests notwendig. Geprüft wird ab jedem Feld,
+     * ob in die jeweilige Suchrichtung entsprechend viele gleiche Steine
+     * vorliegen.
+     */
+    boolean win = false;
+    int i;
+    // Test auf eine horizontale Folge gleicher Steine
+    // ab jedem Feld im Spielfeld (Figure)
+    for ( int row=0; (row<dimension) && !win; row++ )
+      for ( int col=0; (col<dimension) && !win; col++ ) {
+        win = true;
+        i = 0;
+        // Hier wird die Zeile row ab der Spalte col nach rechts geprüft,
+        // ob mindestens nrInRow Steine gleich current folgen
+        // Beim ersten Misserfolg wird die Variable win auf false gesetzt
+        // und mit einer neuen Spalte oder, falls alle Spalten bereits
+        // geprüft sind, der ersten Spalte einer neuen Zeile weitergemacht
+        while ( (col+i<dimension) && (i<=nrInRow) && win ) {
+          win = fig[row][col+i].symbol == current;
+          i++;
+        }
+        // win bleibt höchstens dann true, wenn nrInRow gleiche Steine
+        // gefunden wurden
+        win &= i>nrInRow;
+      }
+    // Test auf eine vertikale Folge gleicher Steine
+    // ab jedem Feld im Spielfeld (Figure)
+    for ( int row=0; (row<dimension) && !win; row++ )
+      for ( int col=0; (col<dimension) && !win; col++ ) {
+        win = true;
+        i = 0;
+        // Hier wird die Spalte col ab der Zeile row nach unten geprüft,
+        // ob mindestens nrInRow Steine gleich current folgen
+        // Rest: s. Oben
+        while ( (row+i<dimension) && (i<=nrInRow) && win ) {
+          win = fig[row+i][col].symbol == current;
+          i++;
+        }
+        win &= i>nrInRow;
+      }
+    // Test, ob eine diagonale Fole von nrInRow gleichen Steinen vorliegt:
+    // zeilen-, dann spaltenweise von links oben nach rechts unten;
+    // durchgeführt ab jedem Feld im Spielfeld (Figure)
+    for ( int row=0; (row<dimension) && !win; row++ )
+      for ( int col=0; (col<dimension) && !win; col++ ) {
+        win = true;
+        i = 0;
+        // Hier wird ab Spalte col und Zeile row diagonal von links oben
+        // nach rechts unten durchsucht,
+        // ob mindestens nrInRow Steine gleich current folgen
+        // Rest: s. Oben
+        while ( (row+i<dimension) && (col+i<dimension) && (i<=nrInRow) && win ) {
+          win = fig[row+i][col+i].symbol == current;
+          i++;
+        }
+        win &= i>nrInRow;
+      }
+    // Test, ob eine diagonale Fole von nrInRow gleichen Steinen vorliegt:
+    // zeilen-, dann spaltenweise von rechts oben nach links unten;
+    // durchgeführt ab jedem Feld im Spielfeld (Figure)
+    for ( int row=0; (row<dimension) && !win; row++ )
+      for ( int col=dimension-1; (col>=0) && !win; col-- ) {
+        win = true;
+        i = 0;
+        // Hier wird ab Spalte col und Zeile row diagonal von rechts oben
+        // nach links unten durchsucht,
+        // ob mindestens nrInRow Steine gleich current folgen
+        // Rest: s. Oben
+        while ( (row+i<dimension) && (col-i>=0) && (i<=nrInRow) && win ) {
+          win = fig[row+i][col-i].symbol == current;
+          i++;
+        }
+        win &= i>nrInRow;
+      }
+    return win;
+  }
+
+  boolean undecided (  Figure [][] fig, int noFigure )
+  /* Parameter:
+   * Figure bekommt das (zweidimensionale) Spielfeld übergeben;
+   * noFigure ist der (Integer-)Wert für ein leeres Feld
+   * Ergebnis:
+   * true genau dann, wenn das Spielfeld vollständig belegt ist;
+   * in Verbindung mit !succeeded(...) kann man daraus ein Unentschieden
+   * folgern.
+   *
+   * Idee für den nachfolgenden Test:
+   * Es werden alle Felder überprüft, ob auf ihnen eine Spielfigur
+   * (ungleich noFogure) gesetzt wurde. Falls ja, ist das Spielfeld
+   * vollständig belegt.
+   */
+  {
+    boolean set = true;
+    for ( int row=0; (row<dimension) && set; row++ )
+      for ( int col=0; (col<dimension) && set; col++ )
+        set = fig[row][col].symbol != noFigure;
+    return set;
+  }
+
+}

@@ -1,0 +1,8 @@
+Aufgabe 1 ist dadurch entstanden, dass mehrere Gruppen größere Probleme hatten mit einfachen Schleifen und Abbruchbedingungen, sowie auf die Idee zu kommen sich große bzw. kleine Werte zu merken. Dass ist eher eine kleine Einstiegsaufgabe.
+
+Aufgabe 2 soll einfach zeigen, dass ein PC doch recht lange rechnen muss, um sich an die Konstante Pi anzunähern unter Verwendung von ein paar Schleifen.
+
+Aufgabe 3 ist dann schon eher was brauchbares. Ich dachte eventuell sei es interessant einen einfachen Source Code Line Zähler zu schreiben. Man benötigt einfach ein paar Schleifen, etwas File lesen und ein paar Boolean's udn schon hat man ein sinnvolles Programm.
+
+Aufgabe 4 ist von mir nach ersten Tests sehr vereinfacht worden, da es nicht GDI-fähig war, den Ausgang eines richtigen Labyrinths zu finden, was die erste Aufgabenstellung gewesen wäre. Das Programm ist eine gute Übung zu Array (ich habe es z.B. mit einem 2-dimmensionalen Array
+Implementiert) und es ist ganz schön zu sehen, wie ein Programm selbst eine Aufgabe löst.

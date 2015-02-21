@@ -1,0 +1,34 @@
+
+import java.awt.Button;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class UndecidedFrame extends Frame implements ActionListener {
+  private static final int WIDTH  = 300;
+  private static final int HEIGHT = 150;
+  private Button stop = new Button( "OK" );
+  private Frame playGround;
+
+  public UndecidedFrame( Frame playGround ) {
+    super( "Unentschieden!" );
+    this.playGround = playGround;
+    setSize( WIDTH, HEIGHT );
+    setLayout( new GridLayout( 2, 1 ) );
+    Label lb = new Label( "Das Spiel endete unentschieden!" );
+    lb.setAlignment(Label.CENTER);
+    add( lb );
+    add( stop );
+    stop.addActionListener( this );
+    setVisible(true);
+  }
+
+  public void actionPerformed( ActionEvent e ) {
+  	setVisible(false);
+    playGround.setVisible(false);
+    System.exit( 0 );
+  }
+
+}

@@ -1,0 +1,3 @@
+Das Archiv "Colosseum" ist mein Projektordner unter Eclipse und enth‰lt den korrekten Code.
+Das Archiv "Ausgabe" sind die von mir ver‰nderten Dateien, die fehlerhaft sind und die von den Studenten korrigiert werden sollen.
+Auﬂerdem der erste Entwurf des Aufgabenblattes.

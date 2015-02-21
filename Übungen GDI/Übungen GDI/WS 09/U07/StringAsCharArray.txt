@@ -1,0 +1,23 @@
+package uebung07;
+
+/**
+ * Die implementierenden Klassen implementieren Strings nach dem Muster der
+ * Programmiersprache C, in der Strings als char[] dargestellt
+ * und durch ein 0-Byte abgeschlossen werden.
+ */
+public interface StringAsCharArray{
+
+	/**
+	 * Die Methode vergleicht den Inhalt der beiden Argumente 
+	 * bis zum darin enthaltenen 0-Byte und liefert genau dann 
+	 * true als Ergebnis, wenn die nach dem Muster von C
+	 * aufgebauten Strings gleich sind, wobei Groß- und
+	 * Kleinschreibung nicht unterschieden wird.
+	 * @param s1	Der erste String für den Vergleich
+	 * @param s2	Der zweite String für den Vergleich
+	 * @return	true genau dann, wenn die Inhalte der
+	 * Parameter gleich sind, sonst false
+	 */
+	boolean stricmp( char[] s1, char[] s2 );
+
+}

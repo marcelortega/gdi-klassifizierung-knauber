@@ -1,0 +1,5 @@
+Noch zum Umfang: Insgesamt hat die Implementierung 361 SLOC. Bis zur
+Fertigstellung der Funktionalität habe ich etwa 3-4 Stunden gebraucht.
+Für Refactoring, Fehlerbehandlungen, .. nochmals 2-3 Stunden. Davon
+für Aufgabe 2 und 3 zusammen insgesamt etwa 1,5h.
+
